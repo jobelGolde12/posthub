@@ -17,7 +17,7 @@ const showingNavigationDropdown = ref(false);
                 class="border-b border-gray-100 bg-light"
             >
                 <!-- Primary Navigation Menu -->
-                <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ">
+                <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div class="flex h-16 justify-between">
                         <div class="flex">
                             <!-- Logo -->
@@ -187,42 +187,48 @@ const showingNavigationDropdown = ref(false);
                 </div>
             </header> -->
 
-                <div class="sidebar bg-light">
-    <div class="logo">
-      <i class="bi bi-bar-chart-line-fill"></i> Dashboard
-    </div>
-    
-    <div class="container d-flex justify-content-center align-items-">
-        <button class="new-post  btn btn-success">New Post</button>
-    </div>
+                <div class="container-fluid left-and-main-holder d-flex flex-row align-items-center px-0 justify-content-between">
+                                    <div class="sidebar bg-light">
+                                        <div class="logo">
+                                        <i class="bi bi-bar-chart-line-fill"></i> Dashboard
+                                        </div>
+                                        
+                                                <div class="container d-flex justify-content-center align-items-">
+                                                    <button class="new-post  btn btn-success">New Post</button>
+                                                </div>
 
-    <ul class="nav flex-column mt-3">
-      <li class="nav-item">
-        <a href="#" class="nav-link"><i class="bi bi-house"></i> Home</a>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link"><i class="bi bi-people"></i> Profile</a>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link"><i class="bi bi-list-check"></i> My post</a>
-      </li>
-      
-      
-    </ul>
-  </div>
-
+                                                <ul class="nav flex-column mt-3">
+                                                <li class="nav-item">
+                                                    <a href="#" class="nav-link"><i class="bi bi-house"></i> Home</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#" class="nav-link"><i class="bi bi-people"></i> Profile</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#" class="nav-link"><i class="bi bi-list-check"></i> My post</a>
+                                                </li>
+                                                
+                                                
+                                                </ul>
+                                  </div> 
+                                  <!-- End of a sidenav -->
+                  <!-- Page Content -->
+                    <main class="main">
+                        <slot />
+                    </main>
             </div>
-            <!-- Page Content -->
-            <main>
-                <slot />
-            </main>
+            
         </div>
+                </div>
 </template>
 <style scoped>
+.left-and-main-holder{
+    height: 100vh;
+}
  .sidebar {
-      height: 100vh;
-      width: 280px;
-      position: fixed;
+      height: 100%;
+      width: 20%;
+      position: relative;
       padding-top: 20px;
     }
     .sidebar .logo {
@@ -272,5 +278,10 @@ const showingNavigationDropdown = ref(false);
       font-size: 13px;
       padding: 5px 15px;
       border-radius: 20px;
+    }
+    .main{
+        position: relative;
+        width: 70%;
+        height: 100%;
     }
 </style>
