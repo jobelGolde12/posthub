@@ -118,7 +118,6 @@ const submit = () => {
             </div>
         </form>
     </GuestLayout>
-    <button class="btn btn-dark go-back">Go back</button>
    </div>
 </template>
 

@@ -50,7 +50,7 @@ function handleImageError() {
                         </h1>
 
                         <div class="action-button container d-flex flex-row align-items-center justify-content-center gap-5 pt-3 px-5">
-                            <Link :href="route('login')" class="text-decoration-none text-light bg-dark px-3 py-2 report-found-item-link">Get started <i class="bi bi-arrow-right-short"></i></Link>
+                            <Link :href="route('login')" class="text-decoration-none text-light bg-dark px-3 py-2 get-started">Get started <i class="bi bi-arrow-right-short"></i></Link>
                         </div>
 
                    
@@ -73,35 +73,10 @@ section{
 .signup-link{
     border-radius: 5px;
 } 
-.has-paint{
-    position: relative;
-    z-index: 3;
-    display: inline-block;
-}
-.has-paint::after{
-    content: '';
-    position: absolute;
-    background: url('../images/paint.png') no-repeat center center;
-    width: 150px;
-    height: 80px;
-    top: -5%;
-    left: -10%;
-    z-index: -1;
-    background-size: cover;
-    background-position: center;
-    transform: rotate(10deg);
-}
-
 #hero-content h1{
     font-size: 3rem;
 }
-.report-lost-item-link{
-    color: var(--clr-secondary);
-}
-.report-lost-item-link:hover{
-    background: rgba(0,0,0,.2);
-}
-.report-found-item-link , .report-lost-item-link{
+.get-started{
     border-radius: 5px;
 }
 .hero-image-container {

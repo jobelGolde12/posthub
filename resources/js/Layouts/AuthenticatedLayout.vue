@@ -14,18 +14,16 @@ const showingNavigationDropdown = ref(false);
     <div>
         <div class="min-h-screen bg-gray-100">
             <nav
-                class="border-b border-gray-100 bg-white"
+                class="border-b border-gray-100 bg-light"
             >
                 <!-- Primary Navigation Menu -->
-                <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ">
                     <div class="flex h-16 justify-between">
                         <div class="flex">
                             <!-- Logo -->
                             <div class="flex shrink-0 items-center">
-                                <Link :href="route('dashboard')">
-                                    <ApplicationLogo
-                                        class="block h-9 w-auto fill-current text-gray-800"
-                                    />
+                                <Link :href="route('dashboard')" class="text-dark text-decoration-none">
+                                   PostHub
                                 </Link>
                             </div>
 
@@ -33,12 +31,12 @@ const showingNavigationDropdown = ref(false);
                             <div
                                 class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex"
                             >
-                                <NavLink
+                                <!-- <NavLink
                                     :href="route('dashboard')"
                                     :active="route().current('dashboard')"
                                 >
                                     Dashboard
-                                </NavLink>
+                                </NavLink> -->
                             </div>
                         </div>
 
@@ -180,19 +178,99 @@ const showingNavigationDropdown = ref(false);
             </nav>
 
             <!-- Page Heading -->
-            <header
+            <!-- <header
                 class="bg-white shadow"
                 v-if="$slots.header"
             >
                 <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
                     <slot name="header" />
                 </div>
-            </header>
+            </header> -->
 
+                <div class="sidebar bg-light">
+    <div class="logo">
+      <i class="bi bi-bar-chart-line-fill"></i> Dashboard
+    </div>
+    
+    <div class="container d-flex justify-content-center align-items-">
+        <button class="new-post  btn btn-success">New Post</button>
+    </div>
+
+    <ul class="nav flex-column mt-3">
+      <li class="nav-item">
+        <a href="#" class="nav-link"><i class="bi bi-house"></i> Home</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link"><i class="bi bi-people"></i> Profile</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link"><i class="bi bi-list-check"></i> My post</a>
+      </li>
+      
+      
+    </ul>
+  </div>
+
+            </div>
             <!-- Page Content -->
             <main>
                 <slot />
             </main>
         </div>
-    </div>
 </template>
+<style scoped>
+ .sidebar {
+      height: 100vh;
+      width: 280px;
+      position: fixed;
+      padding-top: 20px;
+    }
+    .sidebar .logo {
+      font-size: 24px;
+      color: #6b7280;
+      font-weight: bold;
+      margin-bottom: 20px;
+      padding-left: 20px;
+    }
+    .sidebar a {
+      color: #374151;
+      text-decoration: none;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      font-size: 15px;
+    }
+    .sidebar a:hover {
+      background-color: #e5e7eb;
+    }
+    .sidebar .nav-item.active > a {
+      background-color: #e5e7eb;
+      font-weight: bold;
+    }
+    .sidebar a i {
+      margin-right: 10px;
+    }
+    .nav-link {
+      padding-left: 45px;
+    }
+    .sidebar .new-post{
+        width: 90%;
+        position: relative;
+        margin: auto;
+        background-color: #4158D0;
+        background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+        border: none;
+
+    }
+    .sidebar .tab-buttons {
+      display: flex;
+      justify-content: space-around;
+      padding: 0 20px;
+      margin-bottom: 10px;
+    }
+    .sidebar .tab-buttons .btn {
+      font-size: 13px;
+      padding: 5px 15px;
+      border-radius: 20px;
+    }
+</style>

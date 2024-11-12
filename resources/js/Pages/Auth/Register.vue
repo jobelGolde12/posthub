@@ -10,6 +10,7 @@ const form = useForm({
     name: '',
     email: '',
     password: '',
+    controlType: 'user',
     password_confirmation: '',
 });
 
